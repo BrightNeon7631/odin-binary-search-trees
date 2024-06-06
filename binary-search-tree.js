@@ -12,7 +12,7 @@ class Tree {
     }
 
     sortArray(array) {
-        let sortedArray = [...array].sort((a, b) => a - b);
+        const sortedArray = [...array].sort((a, b) => a - b);
         return sortedArray;
     }
 
@@ -22,7 +22,7 @@ class Tree {
         }
 
         let mid = parseInt((start + end) / 2);
-        let root = new Node(array[mid]);
+        const root = new Node(array[mid]);
         root.left = this.buildTree(array, start, mid - 1);
         root.right = this.buildTree(array, mid + 1, end);
         return root;
@@ -30,7 +30,7 @@ class Tree {
 
     insert(value, root = this.root) {
         if (root === null) {
-            let newNode = new Node(value);
+            const newNode = new Node(value);
             root = newNode;
             return root;
         } 
@@ -44,7 +44,7 @@ class Tree {
         return root;
     }
 
-    findNextBigerNumber(rightRoot) {
+    findNextBiggerNumber(rightRoot) {
         if (rightRoot.left === null) {
             return rightRoot;
         }
@@ -74,7 +74,7 @@ class Tree {
             } else if (root.right === null) {
                 return root.left;
             } else if (root.left !== null && root.right !== null) {
-                let nextNumber = (this.findNextBigerNumber(root.right)).data;
+                let nextNumber = (this.findNextBiggerNumber(root.right)).data;
                 root.right = this.delete(nextNumber, root.right);
                 root.data = nextNumber;
             }
@@ -97,8 +97,8 @@ class Tree {
     }
 
     levelOrder() {
-        let queue = [this.root];
-        let values = [];
+        const queue = [this.root];
+        const values = [];
         while(queue.length !== 0) {
             values.push(queue[0].data);
             if (queue[0].left !== null) {
@@ -196,7 +196,7 @@ class Tree {
     }
 
     rebalance() {
-        let sorted = this.sortArray(this.inorder());
+        const sorted = this.sortArray(this.inorder());
         this.root = this.buildTree(sorted);
     }
     
@@ -212,8 +212,8 @@ const prettyPrint = (node, prefix = '', isLeft = true) => {
     }
 }
 
-let arrayOne = [50, 30, 70, 20, 40, 60, 80, 32, 65, 75, 85, 34, 36];
-let tree = new Tree(arrayOne);
+const arrayOne = [50, 30, 70, 20, 40, 60, 80, 32, 65, 75, 85, 34, 36];
+const tree = new Tree(arrayOne);
 
 console.log('let tree = new Tree(array);');
 prettyPrint(tree.root);
