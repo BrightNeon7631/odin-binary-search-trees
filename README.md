@@ -32,10 +32,6 @@ I started and finished this project in March 2023.
 - rebalance: rebalances an unbalanced tree
 - prettyPrint: console.logs the tree in a structured format
 
-## Links
-
-[My Other Projects](https://brightneon7631.github.io/odin-scrimba-projects/)
-
 ## Screenshots
 
 ![Screenshot](screenshots/1.png)
@@ -46,7 +42,7 @@ I started and finished this project in March 2023.
 
 ```bash
 # clone repo
-git clone
+git clone https://github.com/BrightNeon7631/odin-binary-search-trees.git
 
 # run script
 node binary-search-tree.js
